@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import pandas as pd
 
-df = pd.read_excel('mailing list11.xlsx') # use csv or excel file to enter the sender details
+df = pd.read_excel('excel_or_csv_file_containig_email_ids_name_etc'.xlsx) # use csv or excel file to enter the sender details
 
 email_list = df['Email Address'] # load senders email ids into a list
 name = df["Name"]
@@ -17,7 +17,7 @@ for x in email_list:
 
     from_add = "sender's email id"
     to_add = x
-    subject = 'FDP - Exposure and readiness of IOT Deployment-Certificate'
+    subject = 'Email_subject'
     content = "Dear {},\n\n " \
               " Thanks and Regards: \n Mr. XYZ Singh\n Director, Your organization".format(y)
     body = MIMEText(content, 'plain')
@@ -25,7 +25,7 @@ for x in email_list:
     msg.add_header('subject', subject)
     #########
 
-    #reame the file name with common text and add numbering after the name
+    #rename the file name with common text and add numbering after the name
 
     # for ex: file-1, file-2 etc
 
